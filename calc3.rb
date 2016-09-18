@@ -53,4 +53,6 @@ end
 
 wowza = WhizBangCalculator.new
 
+
 p wowza.add(10,5)
+p wowza 

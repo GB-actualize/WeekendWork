@@ -4,32 +4,41 @@
 
 def find_missing_letter(range)
 
-  alphabet_array = []
   alphabet = "abcdefghijklmnopqrstuvwxyz"
-  alphabet_split = alphabet.split
-  alphabet_split.each do |letter|
-    alphabet_array << letter
-  end
+  alphabet_split = alphabet.split(//)
+  alphabet_array = alphabet_split.to_a
+  
+  range_split = range.split(//)
+  range_array = range_split.to_a
 
-  range_array = []
-  range_split = range.split
-  range_split.each do |range_letter|
-      range_array << range_letter
-  end
-
-  missing_letters = []
-  range_array.each do |item|
-    unless alphabet_array.include?(item)
-      missing_letters << item
+  same_letters = []
+  alphabet_array.each do |alphaletter|
+    range_array.each do |rangeletter|
+      if alphaletter == rangeletter
+        same_letters << rangeletter
+      end
     end
+    p same_letters
   end
 
+  missing_letter = alphabet_array - same_letters
 
-  return missing_letters
+  # missing_letters = []
+  # missing_letters = alphabet_array - range_array
+
+  # total_missing = []
+  # total_missing = alphabet_array - missing_letters
+  # total_missing.each do |letter|
+  #   total_missing << letter
+  #   return total_missing
+  # end
+
+  return missing_letter
 
 end
 
 # Driver code - don't touch anything below this line.
+
 puts "TESTING find_missing_letter..."
 puts
 
