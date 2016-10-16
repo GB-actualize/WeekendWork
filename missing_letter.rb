@@ -11,18 +11,20 @@ def find_missing_letter(range)
   range_split = range.split(//)
   range_array = range_split.to_a
 
-  same_letters = []
-  alphabet_array.each do |alphaletter|
-    range_array.each do |rangeletter|
-      if alphaletter == rangeletter
-        same_letters << rangeletter
+  missing_letters = []
+  for i in alphabet_array
+    for i in range_array
+      while alphabet_array == range_array   
+        missing_letters << i
       end
     end
-    p same_letters
+
+  return i
   end
 
-  missing_letter = alphabet_array - same_letters
+ 
 
+  
   # missing_letters = []
   # missing_letters = alphabet_array - range_array
 
@@ -33,7 +35,6 @@ def find_missing_letter(range)
   #   return total_missing
   # end
 
-  return missing_letter
 
 end
 
